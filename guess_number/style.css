@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game_container {
+    text-align: center;
+    border: 2px solid black;
+    padding: 20px;
+    background-color: #fffacd;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+}
+
+#start_page {
+    background-color: skyblue;
+}
+
+#game_page {
+    background-color: skyblue;
+}
+
+h1 {
+    color: #333;
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.input_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+input {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+    width: 100%;
+    max-width: 300px; /* 입력 창의 최대 너비를 300px로 설정 */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 5px;
+    cursor: pointer;
+    max-width: 100px; /* 버튼의 최대 너비를 100px로 설정 */
+}
+
+.result, .attempts {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .input_container {
+        flex-direction: column;
+    }
+    input {
+        margin-bottom: 10px;
+        margin-right: 0;
+        max-width: 100%; /* 모바일 화면에서 입력 창의 너비를 100%로 설정 */
+    }
+    button {
+        padding: 10px;
+        font-size: 1em;
+        margin: 5px 0;
+        width: 100%; /* 모바일 화면에서 버튼의 너비를 100%로 설정 */
+    }
+}
