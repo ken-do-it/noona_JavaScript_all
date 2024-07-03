@@ -39,5 +39,30 @@ body {
 .task {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 10vh;
     padding: 1em;
+}
+
+.task_done {
+    text-decoration: line-through;
+    text-decoration-color: rgb(234, 151, 151);
+    text-decoration-thickness: 2px;
+    background-color: #cecdcd;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100vh;
+}
+
+.icon_size {
+    font-size: 2em;
+    color: skyblue;
+    padding-right: 40px;
+}
+
+.icon_size2 {
+    font-size: 2em;
+    color: rgb(241, 107, 107);
+    padding-right: 40px;
 }
