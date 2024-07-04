@@ -9,26 +9,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <section class="container">
         <h1>Todo List</h1>
-        <section class="input_area">
+        <div class="input_area">
             <input type="text" id="task_input">
             <button id="add_button">+</button>
-        </section>
+        </div>
+        <div id="message" style="color: red;"></div>
 
         <section class="task_area">
             <div class="task_tabs">
                 <div id="under_line"></div>
-                <div>모두</div>
-                <div>진행중</div>
-                <div>끝남</div>
+                <div id = "all">모두</div>
+                <div id = "ongoing">진행중</div>
+                <div id = "done">끝남</div>
             </div>
 
             <div id="task_board">
-                <div id="test"> <span>hi</span></div>
+
             </div>
         </section>
-    </div>
+    </section>
     
     <script src="https://kit.fontawesome.com/d68b91e608.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
