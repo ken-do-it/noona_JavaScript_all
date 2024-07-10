@@ -5,28 +5,144 @@ body {
     background-color: #f4f4f4;
 }
 
-#news-container {
+
+
+
+.search_container {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.icon_button {
+    padding: 8px 9px 9px;
+    margin-top: 5px;
+}
+
+.icon_button:hover {
+    background-color: rgb(234, 234, 54);
+}
+
+.hide {
+    display: none;
+}
+
+.head_line {
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.head_line svg {
+    width: 430px;
+}
+
+.menus {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 4px double black;
+    flex-wrap: wrap;
+}
+
+.menus button {
+    border: none;
+    background: none;
+    margin: 5px;
+}
+
+.menus button:hover {
+    background-color: rgb(233, 233, 52);
+}
+
+.news_img_size {
+    max-width: 100%;
+    max-height: 250px;
+}
+
+.title {
+    font-size: 20pt;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-top: 2em;
+}
+
+
+.side_menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8); 
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side_menu_list button {
+    margin: 5px;
+    border: none;
+    background: none;
+    width: 120px;
+    color: white; 
+    transition: background-color 0.3s; 
+}
+
+.side_menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border: none;
+    background: none;
+    color: white;
+}
+
+.side_menu_list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
 }
 
-.news-item {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.side_menu_list button:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 3px;
 }
 
-.news-item h2 {
-    margin: 0 0 10px 0;
+.search_button {
+    background-color: rgb(122, 89, 223);
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    height: 33px;
+    border-radius: 10px;
+    margin-left: 5px;
 }
 
-.news-item p {
-    margin: 0 0 10px 0;
+
+#search_input {
+    border-radius: 10px;
+    height: 33px;
+    margin-left: 10px;
 }
 
-.news-item a {
-    color: #007BFF;
-    text-decoration: none;
+#input_area {
+    align-items: center;
+    display: none;
+    margin-left: -5px;
+}
+
+@media screen and (max-width: 800px) {
+    .hide {
+        display: inline;
+    }
+    .menus {
+        display: none;
+    }
+
 }
