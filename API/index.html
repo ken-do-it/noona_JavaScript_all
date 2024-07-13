@@ -28,15 +28,18 @@
     <section class="container">
         <div>
             <div class="search_container">
-                <i class="fas fa-bars hide icon_button" onclick="openNav()"></i>
-                <i class="fas fa-search icon_button" onclick="openSearchBox()"></i>
-                <i class="fa-solid fa-house icon_button" id="home"></i>
-
+                <div class="icon_group">
+                    <i class="fas fa-bars icon_button" onclick="openNav()"></i>
+                    <i class="fa-solid fa-house icon_button" id="home"></i>
+                    <i class="fas fa-search icon_button" onclick="openSearchBox()"></i>
                     <span id="input_area">
                         <input type="text" id="search_input" placeholder="search"/>
                         <button class="search_button" onclick="getNewsByKeyword()">Go</button>
                     </span>
+                    
                 </div>
+                <div id="google_translate_element"></div>
+            </div>
 
             <div class="head_line" id="logo">
                 
@@ -59,10 +62,28 @@
 
         <section id="news_board">
             <div class="row news">
-              
+                <!-- <div class="col-lg-4">
+                    <img class="news_img_size" src="https://i.ytimg.com/vi/_TJhpPFqlkc/maxresdefault.jpg" alt="">
+                </div>
+                <div class="col-lg-8">
+                    <h2>따라하는 코딩</h2>
+                    <p>수업을 따라하는거다 </p>
+                    <div>출처 나  오늘</div>
+                </div> -->
             </div>
         </section>
+
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              
+            </ul>
+          </nav>
+
+          
     </section>
+
+  
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js"></script>

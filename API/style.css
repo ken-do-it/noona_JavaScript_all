@@ -6,13 +6,24 @@ body {
 }
 
 
-
+.news {
+    border-bottom:  2px solid black;
+    padding: 10px 0px;
+}
 
 .search_container {
     margin-top: 1em;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.icon_group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px; /* 아이콘 사이의 간격 조절 */
 }
 
 
@@ -25,6 +36,18 @@ body {
     background-color: rgb(234, 234, 54);
 }
 
+#google_translate_element {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.google-te-combo {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #3498db;
+    font-family: 'roboto', 'sans-serif';
+}
 
 
 
