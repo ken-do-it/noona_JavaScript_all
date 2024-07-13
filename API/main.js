@@ -9,8 +9,8 @@ const pageSize = 10; // 페이지당 뉴스 기사 수
 const groupSize = 5; // 페이지 그룹당 페이지 수
 
 // 뉴스 API URL 설정
-let url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
-//let url = new URL("https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines"); // 새로운 API 주소
+//let url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
+let url = new URL("https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines"); // 새로운 API 주소
 
 // 메뉴 버튼에 클릭 이벤트 리스너 추가
 menus.forEach(menu => menu.addEventListener("click", (event) => {
