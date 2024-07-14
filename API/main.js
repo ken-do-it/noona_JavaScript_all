@@ -14,6 +14,7 @@ let url = new URL("https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlin
 
 // 메뉴 버튼에 클릭 이벤트 리스너 추가
 menus.forEach(menu => menu.addEventListener("click", (event) => {
+    page = 1; // 페이지 번호 초기화
     getNewsByCategory(event); // 카테고리별 뉴스 가져오기
     closeNav(); // 메뉴 클릭 후 사이드 메뉴 닫기
 }));
@@ -45,6 +46,7 @@ const getNews = async () => {
 
 // 최신 뉴스를 가져오는 함수
 const getLatesNews = async () => {
+    page = 1; // 페이지 번호 초기화
     //url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`); // my API 주소 사용
     url = new URL("https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines"); // 새로운 noona API 주소
     await getNews(); // 뉴스 가져오기
@@ -52,6 +54,7 @@ const getLatesNews = async () => {
 
 // 카테고리별 뉴스를 가져오는 함수
 const getNewsByCategory = async (event) => {
+    page = 1; // 카테고리 선택시 1번 페이지로 초기화
     const category = event.target.textContent.toLowerCase(); // 카테고리 가져오기
     //url = new URL(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`); // my API 주소 사용
     url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?category=${category}`); // noona 새로운 API 주소
@@ -60,6 +63,7 @@ const getNewsByCategory = async (event) => {
 
 // 키워드로 뉴스를 가져오는 함수
 const getNewsByKeyword = async () => {
+    page = 1; // 페이지 번호 초기화
     const keyword = document.getElementById("search_input").value; // 검색어 가져오기
     //url = new URL(`https://newsapi.org/v2/top-headlines?country=us&q=${keyword}&apiKey=${API_KEY}`); // my API 주소 사용
     url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?q=${keyword}`); // noona 새로운 API 주소
@@ -108,6 +112,7 @@ const openSearchBox = () => {
 // Enter 키를 눌렀을 때 키워드로 뉴스 검색
 document.getElementById("search_input").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
+        page = 1; // 페이지 번호 초기화
         getNewsByKeyword(); // 키워드로 뉴스 검색 함수 호출
     }
 });
@@ -118,7 +123,10 @@ document.getElementById("search_input").addEventListener("click", function() {
 });
 
 // 로고에 클릭 이벤트 리스너 추가 (페이지 새로 고침)
-home.addEventListener("click", () => location.reload()); // 페이지 새로 고침
+home.addEventListener("click", () => {
+    page = 1; // 페이지 번호 초기화
+    getLatesNews(); // 최신 뉴스 가져오기
+});
 
 // 에러 메시지 렌더링 함수
 const errorRender = (errorMessage) => {
@@ -168,18 +176,8 @@ const moveToPage = (pageNum) => {
     console.log("move to page", pageNum);
     page = pageNum; // 페이지 번호 업데이트
     getNews(); // 뉴스 가져오기
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // 화면을 맨 위로 스크롤
 };
-
-// Google Translate Element 초기화 함수
-function onLoadTranslate() {
-    new google.translate.TranslateElement({pageLanguage: ''}, 'google_translate_element');
-}
-
-// Google Translate Element 로드 스크립트
-const googleTranslateScript = document.createElement('script');
-googleTranslateScript.type = 'text/javascript';
-googleTranslateScript.src = 'https://translate.google.com/translate_a/element.js?cb=onLoadTranslate';
-document.head.appendChild(googleTranslateScript);
 
 // 페이지 로드 시 최신 뉴스 가져오기
 getLatesNews();
