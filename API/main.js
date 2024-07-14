@@ -179,20 +179,16 @@ const moveToPage = (pageNum) => {
     window.scrollTo({ top: 0, behavior: 'smooth' }); // 화면을 맨 위로 스크롤
 };
 
-
-
 // Google Translate Element 초기화 함수
-function onLoadTranslate() {
+function onLoadTranslate () {
     new google.translate.TranslateElement({pageLanguage: ''}, 'google_translate_element');
-}
+};
 
 // Google Translate Element 로드 스크립트
 const googleTranslateScript = document.createElement('script');
 googleTranslateScript.type = 'text/javascript';
 googleTranslateScript.src = 'https://translate.google.com/translate_a/element.js?cb=onLoadTranslate';
 document.head.appendChild(googleTranslateScript);
-
-
 
 // 페이지 로드 시 최신 뉴스 가져오기
 getLatesNews();

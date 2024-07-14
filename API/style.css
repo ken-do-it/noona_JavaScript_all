@@ -5,10 +5,9 @@ body {
     background-color: #f4f4f4;
 }
 
-
 .news {
-    border-bottom:  2px solid black;
-    padding: 10px 0px;
+    border-bottom: 2px solid black;
+    padding: 10px 0;
 }
 
 .search_container {
@@ -25,7 +24,6 @@ body {
     flex-wrap: wrap;
     gap: 10px; /* 아이콘 사이의 간격 조절 */
 }
-
 
 .icon_button {
     padding: 8px 9px 9px;
@@ -48,8 +46,6 @@ body {
     border: 1px solid #3498db;
     font-family: 'roboto', 'sans-serif';
 }
-
-
 
 .hide {
     display: none;
@@ -97,7 +93,6 @@ body {
     margin-top: 2em;
 }
 
-
 .side_menu {
     height: 100%;
     width: 0;
@@ -105,7 +100,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 0.8);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -116,8 +111,8 @@ body {
     border: none;
     background: none;
     width: 120px;
-    color: white; 
-    transition: background-color 0.3s; 
+    color: white;
+    transition: background-color 0.3s;
 }
 
 .side_menu .closebtn {
@@ -138,7 +133,7 @@ body {
 }
 
 .side_menu_list button:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 3px;
 }
 
@@ -150,7 +145,6 @@ body {
     border-radius: 10px;
     margin-left: 5px;
 }
-
 
 #search_input {
     border-radius: 10px;
@@ -164,6 +158,12 @@ body {
     margin-left: -5px;
 }
 
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 800px) {
     .hide {
         display: inline;
@@ -171,5 +171,7 @@ body {
     .menus {
         display: none;
     }
-
+    .hamburger-menu {
+        display: block;
+    }
 }
